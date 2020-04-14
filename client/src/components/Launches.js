@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
 import LaunchItem from './LaunchItem';
+import MissionKey from './MissionKey';
 
 const LAUNCHES_QUERY = gql`
   {
@@ -18,6 +19,7 @@ const Launches = (props) => {
   return (
     <Fragment>
       <h1 className='display-4 my-3'>Launches</h1>
+      <MissionKey />
       <Query query={LAUNCHES_QUERY}>
         {({ loading, error, data }) => {
           if (loading) return <h4>Loading...</h4>;
